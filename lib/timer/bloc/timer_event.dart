@@ -1,17 +1,11 @@
-// ignore_for_file: unused_element
-
 part of 'timer_bloc.dart';
 
-sealed class TimerEvent extends Equatable {
+sealed class TimerEvent {
   const TimerEvent();
-
-  @override
-  List<Object> get props => [];
 }
 
 final class TimerStarted extends TimerEvent {
   const TimerStarted({required this.duration});
-
   final int duration;
 }
 
@@ -23,7 +17,7 @@ final class TimerResumed extends TimerEvent {
   const TimerResumed();
 }
 
-final class TimerReset extends TimerEvent {
+class TimerReset extends TimerEvent {
   const TimerReset();
 }
 
